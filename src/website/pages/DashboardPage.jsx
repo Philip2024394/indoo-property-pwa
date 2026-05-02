@@ -18,7 +18,7 @@ function fmtRp(n) {
   return `Rp ${v.toLocaleString('id-ID')}`
 }
 
-const glass = { background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 16 }
+const glass = { background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 16 }
 const inp = { width: '100%', padding: '12px 14px', borderRadius: 12, boxSizing: 'border-box', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: 14, fontWeight: 600, fontFamily: 'inherit', outline: 'none', marginBottom: 10 }
 
 export default function DashboardPage({ onBack, onSelectListing }) {
@@ -165,7 +165,7 @@ export default function DashboardPage({ onBack, onSelectListing }) {
                       <div key={l.id || l.ref} style={{ ...glass, overflow: 'hidden' }}>
                         <div style={{ height: 130, overflow: 'hidden', position: 'relative' }}>
                           {l.images?.[0] ? <img src={l.images[0]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <div style={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.03)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32 }}>🏠</div>}
-                          {isSoldRented && <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={l.status === 'sold' ? 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2004_45_33%20AM.png' : 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2004_43_39%20AM.png'} alt="" style={{ width: '35%', objectFit: 'contain' }} /></div>}
+                          {isSoldRented && <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><img src={l.status === 'sold' ? 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2004_45_33%20AM.png' : 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2004_43_39%20AM.png'} alt="" style={{ width: '35%', objectFit: 'contain' }} /></div>}
                           <div style={{ position: 'absolute', top: 6, left: 6, display: 'flex', gap: 4 }}>
                             <span style={{ padding: '2px 7px', borderRadius: 5, background: l.status === 'active' || l.status === 'live' ? '#8DC63F' : l.status === 'sold' ? '#EF4444' : l.status === 'rented' ? '#60A5FA' : '#F59E0B', fontSize: 9, fontWeight: 900, color: '#000' }}>{l.status || 'active'}</span>
                             <span style={{ padding: '2px 7px', borderRadius: 5, background: l.buy_now ? '#FACC15' : '#8DC63F', fontSize: 9, fontWeight: 900, color: '#000' }}>{l.buy_now ? 'Sale' : 'Rent'}</span>

@@ -77,14 +77,14 @@ function PropertyCard({ l, onClick }) {
       <div style={{ height: 200, overflow: 'hidden', position: 'relative' }}>
         <img src={l.images?.[0]} alt={l.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(transparent 60%, rgba(0,0,0,0.6))' }} />
-        <div style={{ position: 'absolute', top: 10, left: 10, padding: '4px 12px', borderRadius: 8, background: l.buy_now ? '#FACC15' : '#8DC63F', fontSize: 11, fontWeight: 900, color: '#000' }}>{l.buy_now ? 'FOR SALE' : 'FOR RENT'}</div>
-        {l.rating && <div style={{ position: 'absolute', bottom: 10, right: 10, padding: '3px 8px', borderRadius: 6, background: 'rgba(0,0,0,0.6)', fontSize: 11, fontWeight: 800, color: '#FACC15' }}>⭐ {l.rating}</div>}
+        <div style={{ position: 'absolute', top: 10, left: 10, padding: '4px 12px', borderRadius: 8, background: l.buy_now ? '#FACC15' : '#8DC63F', fontSize: 14, fontWeight: 900, color: '#000' }}>{l.buy_now ? 'FOR SALE' : 'FOR RENT'}</div>
+        {l.rating && <div style={{ position: 'absolute', bottom: 10, right: 10, padding: '3px 8px', borderRadius: 6, background: 'rgba(0,0,0,0.6)', fontSize: 14, fontWeight: 800, color: '#FACC15' }}>⭐ {l.rating}</div>}
       </div>
       <div style={{ padding: '14px 16px' }}>
         <div style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 4, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{l.title}</div>
-        <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', marginBottom: 8 }}>📍 {l.city} · {l.sub_category}</div>
-        <div style={{ fontSize: 20, fontWeight: 900, color: '#FACC15' }}>{fmtRp(price)}{!l.buy_now && <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>{l.price_month ? '/mo' : '/day'}</span>}</div>
-        {(ef.bedrooms || ef.land_area) && <div style={{ marginTop: 6, fontSize: 13, color: 'rgba(255,255,255,0.5)', display: 'flex', gap: 8 }}>{ef.bedrooms && <span>🛏️ {ef.bedrooms}</span>}{ef.bathrooms && <span>🚿 {ef.bathrooms}</span>}{ef.land_area && <span>📐 {ef.land_area}</span>}</div>}
+        <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', marginBottom: 8 }}>📍 {l.city} · {l.sub_category}</div>
+        <div style={{ fontSize: 20, fontWeight: 900, color: '#FACC15' }}>{fmtRp(price)}{!l.buy_now && <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{l.price_month ? '/mo' : '/day'}</span>}</div>
+        {(ef.bedrooms || ef.land_area) && <div style={{ marginTop: 6, fontSize: 14, color: 'rgba(255,255,255,0.5)', display: 'flex', gap: 8 }}>{ef.bedrooms && <span>🛏️ {ef.bedrooms}</span>}{ef.bathrooms && <span>🚿 {ef.bathrooms}</span>}{ef.land_area && <span>📐 {ef.land_area}</span>}</div>}
       </div>
     </div>
   )
@@ -126,7 +126,7 @@ function ProjectCircleCarousel() {
               <img src={p.images?.[0] || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=200'} alt={p.project_name} style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
             </div>
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontSize: 11, fontWeight: 800, color: '#fff', lineHeight: 1.2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 100 }}>{p.project_name}</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#fff', lineHeight: 1.2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 100 }}>{p.project_name}</div>
               <div style={{ fontSize: 10, fontWeight: 700, color: status.color }}>{status.label}</div>
             </div>
           </div>
@@ -173,7 +173,7 @@ function TopAgentsCarousel() {
           <div style={{ width: 70, height: 70, borderRadius: '50%', overflow: 'hidden', border: '3px solid rgba(96,165,250,0.3)', transition: 'border-color 0.3s' }}>
             <img src={a.photo} alt={a.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <div style={{ fontSize: 11, fontWeight: 800, color: '#fff', textAlign: 'center', lineHeight: 1.2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 90 }}>{a.name}</div>
+          <div style={{ fontSize: 14, fontWeight: 800, color: '#fff', textAlign: 'center', lineHeight: 1.2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 90 }}>{a.name}</div>
           <div style={{ fontSize: 10, fontWeight: 700, color: '#60A5FA' }}>{a.sold} sold</div>
         </div>
       ))}
@@ -206,7 +206,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
             <div style={{ display: 'flex', maxWidth: 540, marginBottom: 24 }}>
               <input value={searchVal} onChange={e => setSearchVal(e.target.value)} onKeyDown={e => e.key === 'Enter' && onSearch?.(searchVal)}
                 placeholder="Search villas, apartments, kos, land..."
-                style={{ flex: 1, padding: '18px 22px', borderRadius: '16px 0 0 16px', border: '2px solid rgba(141,198,63,0.3)', borderRight: 'none', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(12px)', color: '#fff', fontSize: 16, fontFamily: 'inherit', outline: 'none' }} />
+                style={{ flex: 1, padding: '18px 22px', borderRadius: '16px 0 0 16px', border: '2px solid rgba(141,198,63,0.3)', borderRight: 'none', background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(12px)', color: '#fff', fontSize: 16, fontFamily: 'inherit', outline: 'none' }} />
               <button onClick={() => onSearch?.(searchVal)} style={{ padding: '18px 32px', borderRadius: '0 16px 16px 0', border: 'none', background: 'linear-gradient(135deg, #8DC63F, #6BA52A)', color: '#000', fontSize: 16, fontWeight: 900, cursor: 'pointer', fontFamily: 'inherit' }}>Search</button>
             </div>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
@@ -220,8 +220,8 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
           </ScrollReveal>
 
           <ScrollReveal delay={0.2} style={{ width: 320, flexShrink: 0 }}>
-            <div style={{ background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(20px)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.06)', padding: '28px 24px' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.3)', marginBottom: 20, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Platform Stats</div>
+            <div style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(20px)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.06)', padding: '28px 24px' }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.3)', marginBottom: 20, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Platform Stats</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 <StatsCounter value={allProperty.length} label="Total Properties" />
                 <StatsCounter value={forSale.length} label="For Sale" color="#FACC15" />
@@ -255,7 +255,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
             <ScrollReveal>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
                 <h2 style={{ fontSize: 28, fontWeight: 900, color: '#FACC15', margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}><img src="https://ik.imagekit.io/nepgaxllc/Untitledrwerwer-removebg-preview.png" alt="" style={{ width: 36, height: 36, objectFit: 'contain' }} />For Sale</h2>
-                <button onClick={onBrowseSale} style={{ padding: '8px 20px', borderRadius: 10, border: '1px solid rgba(250,204,21,0.3)', background: 'rgba(250,204,21,0.06)', color: '#FACC15', fontSize: 13, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>View All →</button>
+                <button onClick={onBrowseSale} style={{ padding: '8px 20px', borderRadius: 10, border: '1px solid rgba(250,204,21,0.3)', background: 'rgba(250,204,21,0.06)', color: '#FACC15', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>View All →</button>
               </div>
             </ScrollReveal>
             <AutoCarousel items={forSale} renderCard={(l) => <PropertyCard l={l} onClick={() => onSelectListing?.(l)} />} />
@@ -270,7 +270,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
             <ScrollReveal>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
                 <h2 style={{ fontSize: 28, fontWeight: 900, color: '#8DC63F', margin: 0 }}>🔑 For Rent</h2>
-                <button onClick={onBrowseRent} style={{ padding: '8px 20px', borderRadius: 10, border: '1px solid rgba(141,198,63,0.3)', background: 'rgba(141,198,63,0.06)', color: '#8DC63F', fontSize: 13, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>View All →</button>
+                <button onClick={onBrowseRent} style={{ padding: '8px 20px', borderRadius: 10, border: '1px solid rgba(141,198,63,0.3)', background: 'rgba(141,198,63,0.06)', color: '#8DC63F', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>View All →</button>
               </div>
             </ScrollReveal>
             <AutoCarousel items={forRent} renderCard={(l) => <PropertyCard l={l} onClick={() => onSelectListing?.(l)} />} />
@@ -290,7 +290,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
                   <div className="ws-card" onClick={() => onSearch?.(t.id)} style={{ padding: '22px 16px', borderRadius: 16, background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
                     <div style={{ fontSize: 32, marginBottom: 6 }}>{t.icon}</div>
                     <div style={{ fontSize: 15, fontWeight: 800, color: '#fff' }}>{t.label}</div>
-                    <div style={{ fontSize: 12, color: '#8DC63F', fontWeight: 700, marginTop: 4 }}>{count} listings</div>
+                    <div style={{ fontSize: 14, color: '#8DC63F', fontWeight: 700, marginTop: 4 }}>{count} listings</div>
                   </div>
                 </ScrollReveal>
               )
@@ -309,7 +309,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(transparent 30%, rgba(0,0,0,0.8))' }} />
               <div style={{ position: 'absolute', bottom: 12, left: 12 }}>
                 <div style={{ fontSize: 17, fontWeight: 900, color: '#fff' }}>{c.name}</div>
-                <div style={{ fontSize: 12, color: '#8DC63F', fontWeight: 700 }}>{c.count} properties</div>
+                <div style={{ fontSize: 14, color: '#8DC63F', fontWeight: 700 }}>{c.count} properties</div>
               </div>
             </div>
           )} />
@@ -329,8 +329,8 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
                 <div className="ws-card" onClick={() => { if (['agents', 'newprojects', 'wanted', 'invest'].includes(f.toolId)) { onNavigate?.(f.toolId) } else if (f.toolId === 'dealhunt') { onNavigate?.('home') } else { setActiveTool(f.toolId) } }} style={{ padding: '24px 20px', borderRadius: 16, background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.05)', cursor: 'pointer' }}>
                   <div style={{ fontSize: 28, marginBottom: 10 }}>{f.icon}</div>
                   <div style={{ fontSize: 15, fontWeight: 800, color: '#fff', marginBottom: 6 }}>{f.title}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>{f.desc}</div>
-                  <div style={{ marginTop: 10, fontSize: 12, fontWeight: 800, color: '#8DC63F' }}>Try it →</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>{f.desc}</div>
+                  <div style={{ marginTop: 10, fontSize: 14, fontWeight: 800, color: '#8DC63F' }}>Try it →</div>
                 </div>
               </ScrollReveal>
             ))}
@@ -355,6 +355,110 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
       <ToolModal open={activeTool === 'transport'} onClose={() => setActiveTool(null)} title="🚇 Transport Nearby" small>
         <TransportProximity listing={sampleListing} />
       </ToolModal>
+
+      {/* ═══ INTERNATIONAL INVESTORS SECTION ═══ */}
+      <section style={{ padding: '64px 0', borderTop: '1px solid rgba(250,204,21,0.1)', background: 'linear-gradient(135deg, rgba(250,204,21,0.03), rgba(0,0,0,0.6))' }}>
+        <div className="ws-container">
+          <ScrollReveal>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(250,204,21,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>🌏</div>
+              <h2 style={{ fontSize: 32, fontWeight: 900, color: '#fff', margin: 0 }}>International <span style={{ color: '#FACC15' }}>Investors</span></h2>
+            </div>
+            <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.4)', margin: '0 0 32px', maxWidth: 550 }}>Foreign-legal property investment in Indonesia — 8-12% yields, 50% price growth in 2024, 80-year ownership structures.</p>
+          </ScrollReveal>
+
+          {/* Trust Stats */}
+          <ScrollReveal delay={0.1}>
+            <div style={{ display: 'flex', gap: 16, marginBottom: 36, flexWrap: 'wrap' }}>
+              {[
+                { value: '8-12%', label: 'Rental Yields', color: '#8DC63F' },
+                { value: '50%', label: 'Price Growth 2024', color: '#FACC15' },
+                { value: '80yr', label: 'Ownership Duration', color: '#60A5FA' },
+                { value: '$100K+', label: 'Entry From', color: '#A78BFA' },
+              ].map(s => (
+                <div key={s.label} style={{ flex: 1, minWidth: 140, padding: '20px 16px', borderRadius: 14, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
+                  <div style={{ fontSize: 24, fontWeight: 900, color: s.color }}>{s.value}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.4)', marginTop: 4 }}>{s.label}</div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* How Foreigners Buy */}
+          <ScrollReveal delay={0.2}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14, marginBottom: 36 }}>
+              {[
+                { step: '01', title: 'Browse', desc: 'Filter foreign-eligible properties', color: '#8DC63F' },
+                { step: '02', title: 'Consult', desc: 'Free guidance on legal structure', color: '#60A5FA' },
+                { step: '03', title: 'Legal & Notary', desc: 'We connect verified professionals', color: '#FACC15' },
+                { step: '04', title: 'Own & Earn', desc: 'Ownership secured, yields start', color: '#A78BFA' },
+              ].map(s => (
+                <div key={s.step} style={{ padding: '20px 16px', borderRadius: 14, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(255,255,255,0.06)', textAlign: 'center' }}>
+                  <div style={{ fontSize: 24, fontWeight: 900, color: s.color, marginBottom: 6 }}>{s.step}</div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#fff', marginBottom: 4 }}>{s.title}</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.35)' }}>{s.desc}</div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* Rental Yield Examples */}
+          <ScrollReveal delay={0.3}>
+            <h3 style={{ fontSize: 18, fontWeight: 900, color: '#fff', margin: '0 0 14px' }}>What Properties Earn</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 14, marginBottom: 36 }}>
+              {[
+                { type: 'Bali Villa', income: '$150-400/night', annual: '~$45K-$120K/yr', yield: '10-15%' },
+                { type: 'Jakarta Apartment', income: '$1,200/month', annual: '~$14.4K/yr', yield: '6-8%' },
+                { type: 'Commercial Ruko', income: '$800-2,000/month', annual: '~$10K-$24K/yr', yield: '8-12%' },
+              ].map(r => (
+                <div key={r.type} style={{ padding: '20px', borderRadius: 14, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(141,198,63,0.1)' }}>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#8DC63F', marginBottom: 8 }}>{r.type}</div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: '#fff', marginBottom: 4 }}>{r.income}</div>
+                  <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.4)' }}>{r.annual} — <span style={{ color: '#FACC15', fontWeight: 800 }}>{r.yield} yield</span></div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {/* CTAs */}
+          <ScrollReveal delay={0.4}>
+            <div style={{ display: 'flex', gap: 14 }}>
+              <button onClick={() => onNavigate?.('invest')} style={{ padding: '14px 28px', borderRadius: 12, border: 'none', background: 'linear-gradient(135deg, #FACC15, #EAB308)', color: '#000', fontSize: 15, fontWeight: 900, cursor: 'pointer', fontFamily: 'inherit' }}>Browse Investment Properties →</button>
+              <button onClick={() => onNavigate?.('legal')} style={{ padding: '14px 28px', borderRadius: 12, border: '1.5px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)', color: '#fff', fontSize: 15, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>Legal Guide</button>
+              <a href="https://wa.me/6281573635143" target="_blank" rel="noopener noreferrer" style={{ padding: '14px 28px', borderRadius: 12, border: '1.5px solid rgba(141,198,63,0.3)', background: 'rgba(141,198,63,0.06)', color: '#8DC63F', fontSize: 15, fontWeight: 800, textDecoration: 'none', display: 'flex', alignItems: 'center' }}>Book Consultation</a>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ═══ COMMERCIAL OPPORTUNITIES ═══ */}
+      <section style={{ padding: '48px 0' }}>
+        <div className="ws-container">
+          <ScrollReveal>
+            <h2 style={{ fontSize: 28, fontWeight: 900, color: '#fff', margin: '0 0 8px' }}>Commercial <span style={{ color: '#FACC15' }}>Opportunities</span></h2>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.35)', margin: '0 0 24px' }}>Restaurants, factories, warehouses, and land available for lease or purchase.</p>
+          </ScrollReveal>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 }}>
+            {[
+              { icon: '☕', label: 'Cafes & Restaurants', search: 'Restaurant' },
+              { icon: '🏭', label: 'Factories', search: 'Pabrik' },
+              { icon: '🏪', label: 'Ruko / Shophouse', search: 'Ruko' },
+              { icon: '📦', label: 'Warehouses', search: 'Gudang' },
+              { icon: '🌍', label: 'Land', search: 'Tanah' },
+              { icon: '🏢', label: 'Office Space', search: 'Office' },
+              { icon: '🏨', label: 'Hotels & Guesthouses', search: 'Hotel' },
+              { icon: '🏗️', label: 'Development Land', search: 'Land Development' },
+            ].map((c, i) => (
+              <ScrollReveal key={c.label} delay={i * 0.05}>
+                <div className="ws-card" onClick={() => onSearch?.(c.search)} style={{ padding: '22px 16px', borderRadius: 16, background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', cursor: 'pointer' }}>
+                  <div style={{ fontSize: 32, marginBottom: 6 }}>{c.icon}</div>
+                  <div style={{ fontSize: 14, fontWeight: 800, color: '#fff' }}>{c.label}</div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ═══ APP DOWNLOAD CTA ═══ */}
       <section style={{ padding: '64px 0', background: 'linear-gradient(135deg, rgba(141,198,63,0.08), rgba(0,0,0,0.6))', borderTop: '1px solid rgba(141,198,63,0.1)' }}>

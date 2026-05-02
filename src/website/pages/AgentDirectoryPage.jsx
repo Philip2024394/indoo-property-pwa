@@ -28,7 +28,7 @@ const CITIES = ['All', 'Yogyakarta', 'Bali', 'Jakarta']
 const SPECS = ['All', 'Villa', 'House', 'Apartment', 'Kos', 'Land', 'Commercial']
 
 const pill = (active) => ({ padding: '7px 16px', borderRadius: 10, cursor: 'pointer', fontFamily: 'inherit', fontSize: 13, fontWeight: 700, border: 'none', background: active ? 'rgba(141,198,63,0.15)' : 'rgba(255,255,255,0.04)', color: active ? '#8DC63F' : 'rgba(255,255,255,0.4)', outline: active ? '1.5px solid rgba(141,198,63,0.4)' : '1px solid rgba(255,255,255,0.06)' })
-const glass = { background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 20 }
+const glass = { background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 20 }
 
 export default function AgentDirectoryPage({ onSelectAgent, onBack }) {
   const [search, setSearch] = useState('')
@@ -82,7 +82,7 @@ export default function AgentDirectoryPage({ onSelectAgent, onBack }) {
         {/* Filters */}
         <ScrollReveal delay={0.1}>
           <div style={{ display: 'flex', gap: 12, marginBottom: 24, flexWrap: 'wrap', alignItems: 'center' }}>
-            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search agents, companies..." style={{ padding: '10px 16px', borderRadius: 12, background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.08)', color: '#fff', fontSize: 14, fontFamily: 'inherit', outline: 'none', width: 220 }} />
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search agents, companies..." style={{ padding: '10px 16px', borderRadius: 12, background: 'rgba(0,0,0,0.75)', border: '1px solid rgba(255,255,255,0.08)', color: '#fff', fontSize: 14, fontFamily: 'inherit', outline: 'none', width: 220 }} />
             <div style={{ display: 'flex', gap: 6 }}>{CITIES.map(c => <button key={c} onClick={() => setCity(c)} style={pill(city === c)}>{c}</button>)}</div>
             <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.06)' }} />
             <div style={{ display: 'flex', gap: 6 }}>{SPECS.map(s => <button key={s} onClick={() => setSpec(s)} style={pill(spec === s)}>{s}</button>)}</div>

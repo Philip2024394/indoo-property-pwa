@@ -18,6 +18,8 @@ import PropertyListingForm from '@/domains/rentals/forms/PropertyListingForm'
 import DashboardPage from './pages/DashboardPage'
 import WantedPropertyPage from './pages/WantedPropertyPage'
 import InvestorPage from './pages/InvestorPage'
+import LegalGuidePage from './pages/LegalGuidePage'
+import AreaGuidePage from './pages/AreaGuidePage'
 import { createListing } from '@/services/rentalListingService'
 
 const BG_IMG = 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2002_15_43%20AM.png'
@@ -37,11 +39,14 @@ export default function WebsiteApp() {
     if (target === 'home') setPage('home')
     else if (target === 'sale') { setPage('search'); setFilterMode('sale') }
     else if (target === 'rent') { setPage('search'); setFilterMode('rent') }
+    else if (target === 'commercial') { setPage('search'); setFilterMode('commercial') }
     else if (target === 'newprojects') setPage('newprojects')
     else if (target === 'agents') setPage('agents')
     else if (target === 'kpr') { setPage('search'); setFilterMode('all') }
     else if (target === 'wanted') setPage('wanted')
     else if (target === 'invest') setPage('invest')
+    else if (target === 'legal') setPage('legal')
+    else if (target === 'areas') setPage('areas')
     else if (target === 'list') { setShowListForm(true) }
     else if (target === 'mylistings' || target === 'dashboard') { setPage('dashboard') }
     else setPage(target)
@@ -140,6 +145,14 @@ export default function WebsiteApp() {
             onBack={() => setPage('home')}
             onSelectListing={handleSelectListing}
           />
+        )}
+
+        {page === 'legal' && (
+          <LegalGuidePage onBack={() => setPage('home')} onNavigate={navigate} />
+        )}
+
+        {page === 'areas' && (
+          <AreaGuidePage onBack={() => setPage('home')} onNavigate={navigate} />
         )}
 
         {page === 'dashboard' && (

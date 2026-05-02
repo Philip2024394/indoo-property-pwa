@@ -11,11 +11,13 @@ const NAV = [
   { id: 'home', label: 'Home' },
   { id: 'sale', label: 'For Sale' },
   { id: 'rent', label: 'For Rent' },
-  { id: 'wanted', label: 'Wanted' },
-  { id: 'invest', label: 'Global Invest' },
+  { id: 'commercial', label: 'Commercial' },
+  { id: 'invest', label: 'Invest' },
   { id: 'newprojects', label: 'New Projects' },
+  { id: 'areas', label: 'Areas' },
+  { id: 'wanted', label: 'Wanted' },
   { id: 'agents', label: 'Agents' },
-  { id: 'kpr', label: 'KPR' },
+  { id: 'legal', label: 'Legal Guide' },
 ]
 
 export default function WebsiteNav({ activePage, onNavigate, onSearch }) {
