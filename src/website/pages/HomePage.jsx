@@ -240,7 +240,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
           <div>
             <ScrollReveal>
               <h2 style={{ fontSize: 20, fontWeight: 900, color: '#fff', margin: '0 0 14px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                <img src="https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2003_29_33%20AM.png" alt="" style={{ width: 84, height: 84, objectFit: 'contain' }} /> <span style={{ color: '#FACC15' }}>New</span> Projects
+                <img src="https://fjvafjkzvygkhiwjuvla.supabase.co/storage/v1/object/public/assets/chatgpt-image-may-2-2026-03_29_33-am.png" alt="" style={{ width: 84, height: 84, objectFit: 'contain' }} /> <span style={{ color: '#FACC15' }}>New</span> Projects
               </h2>
             </ScrollReveal>
             <ProjectCircleCarousel />
@@ -254,7 +254,7 @@ export default function HomePage({ onSearch, onBrowseSale, onBrowseRent, onBrows
           <div className="ws-container">
             <ScrollReveal>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-                <h2 style={{ fontSize: 28, fontWeight: 900, color: '#FACC15', margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}><img src="https://ik.imagekit.io/nepgaxllc/Untitledrwerwer-removebg-preview.png" alt="" style={{ width: 36, height: 36, objectFit: 'contain' }} />For Sale</h2>
+                <h2 style={{ fontSize: 28, fontWeight: 900, color: '#FACC15', margin: 0, display: 'flex', alignItems: 'center', gap: 10 }}><img src="https://fjvafjkzvygkhiwjuvla.supabase.co/storage/v1/object/public/assets/untitledrwerwer-removebg-preview.png" alt="" style={{ width: 36, height: 36, objectFit: 'contain' }} />For Sale</h2>
                 <button onClick={onBrowseSale} style={{ padding: '8px 20px', borderRadius: 10, border: '1px solid rgba(250,204,21,0.3)', background: 'rgba(250,204,21,0.06)', color: '#FACC15', fontSize: 14, fontWeight: 800, cursor: 'pointer', fontFamily: 'inherit' }}>View All →</button>
               </div>
             </ScrollReveal>

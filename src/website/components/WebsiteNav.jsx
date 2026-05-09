@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import { useLanguage, LANGUAGES } from '@/i18n'
 import AuthModal from './AuthModal'
 
-const LOGO = 'https://ik.imagekit.io/nepgaxllc/Bold%203D%20_INDOO_%20logo%20design.png?updatedAt=1776203769926'
+const LOGO = 'https://fjvafjkzvygkhiwjuvla.supabase.co/storage/v1/object/public/assets/bold-3d-_indoo_-logo-design.png'
 
 const NAV = [
   { id: 'home', label: 'Home' },
@@ -17,6 +17,7 @@ const NAV = [
   { id: 'areas', label: 'Areas' },
   { id: 'wanted', label: 'Wanted' },
   { id: 'agents', label: 'Agents' },
+  { id: 'management', label: 'Management' },
   { id: 'legal', label: 'Legal Guide' },
 ]
 

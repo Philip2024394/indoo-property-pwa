@@ -20,9 +20,10 @@ import WantedPropertyPage from './pages/WantedPropertyPage'
 import InvestorPage from './pages/InvestorPage'
 import LegalGuidePage from './pages/LegalGuidePage'
 import AreaGuidePage from './pages/AreaGuidePage'
+import PropertyManagementPage from './pages/PropertyManagementPage'
 import { createListing } from '@/services/rentalListingService'
 
-const BG_IMG = 'https://ik.imagekit.io/nepgaxllc/ChatGPT%20Image%20May%202,%202026,%2002_15_43%20AM.png'
+const BG_IMG = 'https://fjvafjkzvygkhiwjuvla.supabase.co/storage/v1/object/public/assets/chatgpt-image-may-2-2026-02_15_43-am.png'
 
 export default function WebsiteApp() {
   const [page, setPage] = useState('home')
@@ -47,6 +48,7 @@ export default function WebsiteApp() {
     else if (target === 'invest') setPage('invest')
     else if (target === 'legal') setPage('legal')
     else if (target === 'areas') setPage('areas')
+    else if (target === 'management') setPage('management')
     else if (target === 'list') { setShowListForm(true) }
     else if (target === 'mylistings' || target === 'dashboard') { setPage('dashboard') }
     else setPage(target)
@@ -153,6 +155,10 @@ export default function WebsiteApp() {
 
         {page === 'areas' && (
           <AreaGuidePage onBack={() => setPage('home')} onNavigate={navigate} />
+        )}
+
+        {page === 'management' && (
+          <PropertyManagementPage onBack={() => setPage('home')} onNavigate={navigate} />
         )}
 
         {page === 'dashboard' && (
